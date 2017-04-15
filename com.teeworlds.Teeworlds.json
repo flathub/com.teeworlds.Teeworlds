@@ -1,0 +1,133 @@
+{
+    "app-id": "com.teeworlds.Teeworlds",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
+    "finish-args": [
+        "--device=dri",
+        "--persist=.teeworlds",
+        "--share=ipc",
+        "--share=network",
+        "--socket=x11",
+        "--socket=pulseaudio"
+     ],
+    "command": "teeworlds",
+    "rename-icon": "teeworlds",
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/aclocal",
+        "/share/man",
+        "*.la", "*.a"
+    ],
+    "modules": [
+        "org.lua.modules.json",
+        {
+            "name": "bam",
+            "no-autogen": true,
+            "no-parallel-make": true,
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/matricks/bam/archive/v0.5.0.tar.gz",
+                    "sha256": "16c0bccb6c5dee62f4381acaa004dd4f7bc9a32c10d0f2a40d83ea7e2ae25998"
+                },
+                {
+                    "type": "patch",
+                    "path": "bam-destdir.patch"
+                }
+            ]
+        },
+        {
+            "name": "glu",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.0.tar.bz2",
+                    "sha256": "1f7ad0d379a722fcbd303aa5650c6d7d5544fde83196b42a73d1193568a4df12"
+                }
+            ]
+        },
+        {
+            "name": "SDL",
+            "rm-configure": true,
+            "config-opts": ["--disable-static"],
+            "cleanup": [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.libsdl.org/release/SDL-1.2.15.tar.gz",
+                    "sha256": "d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00"
+                },
+                {
+                    "type": "patch",
+                    "path": "sdl-libx11-build.patch"
+                },
+                {
+                    "type": "script",
+                    "path": "autogen.sh",
+                    "commands": [
+                        "sed -i -e 's/.*AM_PATH_ESD.*//' configure.in",
+                        "cp -p /usr/share/automake-*/config.{sub,guess} build-scripts",
+                        "aclocal",
+                        "libtoolize",
+                        "autoconf"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "icoutils",
+            "cleanup": [
+                "*"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://savannah.nongnu.org/download/icoutils/icoutils-0.31.1.tar.bz2",
+                    "sha256": "26e29d3c78f25d4cdf402501ac0414c51a9a092daebf6c9dee3b837dee693093"
+                }
+            ]
+        },
+        {
+            "name": "teeworlds",
+            "no-autogen": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/teeworlds/teeworlds/archive/0.6.4-release.tar.gz",
+                    "sha256": "831afdea9e343cd712382c74b941c6c14adfb9192d32504022b41c2abbb910d7"
+                },
+                {
+                    "type": "patch",
+                    "path": "teeworlds-bam-0.5.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "teeworlds-set-data-dir.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "teeworlds-Makefile",
+                    "dest-filename": "Makefile"
+                },
+                {
+                    "type": "file",
+                    "path": "com.teeworlds.Teeworlds.desktop",
+                    "dest": "other/desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.teeworlds.Teeworlds.appdata.xml",
+                    "dest": "other/appdata"
+                }
+            ]
+        }
+    ]
+}

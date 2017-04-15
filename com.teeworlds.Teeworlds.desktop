@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Teeworlds
+GenericName=Platform Game
+Comment=An online multi-player platform 2D shooter
+Exec=teeworlds
+Icon=teeworlds
+Categories=Game;ArcadeGame;
+Keywords=game;multiplayer;

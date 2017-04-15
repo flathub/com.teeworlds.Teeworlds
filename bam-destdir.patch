@@ -1,0 +1,11 @@
+diff --git a/Makefile b/Makefile
+index d804874..1d55cf7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ # install directories
+-INSTALL_PREFIX = /usr
++INSTALL_PREFIX = /app
+ INSTALL_BINDIR = $(INSTALL_PREFIX)/bin
+ 
+ 
