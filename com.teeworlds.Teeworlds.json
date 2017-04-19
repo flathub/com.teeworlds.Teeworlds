@@ -21,7 +21,8 @@
         "*.la", "*.a"
     ],
     "modules": [
-        "shared-modules/lua-5.3.2.json",
+        "shared-modules/lua5.3/lua-5.3.2.json",
+        "shared-modules/glu/glu-9.0.0.json",
         {
             "name": "bam",
             "no-autogen": true,
