@@ -18,10 +18,6 @@ SentUpstream: 2014-09-25
     </p>
   </description>
   <url type="homepage">http://www.teeworlds.com/</url>
-  <categories>
-    <category>Game</category>
-    <category>ArcadeGame</category>
-  </categories>
   <screenshots>
     <screenshot type="default">https://www.teeworlds.com/images/screens/screenshot_jungle.png</screenshot>
   </screenshots>
