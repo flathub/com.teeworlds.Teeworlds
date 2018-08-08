@@ -2,7 +2,7 @@ all:
 	bam -a -v release
 
 install:
-	cp teeworlds $(DESTDIR)/app/bin
+	cp teeworlds teeworlds_srv $(DESTDIR)/app/bin
 	cp -a data $(DESTDIR)/app/share/teeworlds
 	mkdir -p $(DESTDIR)/app/share/applications
 	cp other/desktop/com.teeworlds.Teeworlds.desktop $(DESTDIR)/app/share/applications
