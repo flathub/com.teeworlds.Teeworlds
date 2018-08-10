@@ -58,7 +58,18 @@
         },
         {
             "name": "teeworlds",
-            "no-autogen": true,
+            "buildsystem": "simple",
+            "build-commands": [
+                "bam -a -v release",
+                "install -Dm755 teeworlds /app/bin/teeworlds",
+                "install -Dm755 teeworlds_srv /app/bin/teeworlds_srv",
+                "cp -a data /app/share/teeworlds",
+                "install -Dm644 com.teeworlds.Teeworlds.desktop /app/share/applications/com.teeworlds.Teeworlds.desktop",
+                "install -Dm644 com.teeworlds.Teeworlds.appdata.xml /app/share/appdata/com.teeworlds.Teeworlds.appdata.xml",
+                "mkdir -p icotmp",
+                "icotool -x -o icotmp other/icons/Teeworlds.ico",
+	        "for s in 16 24 32 48 128 256; do install -Dm644 icotmp/Teeworlds_*_${s}x${s}x32.png /app/share/icons/hicolor/${s}x${s}/apps/teeworlds.png; done"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -75,18 +86,11 @@
                 },
                 {
                     "type": "file",
-                    "path": "teeworlds-Makefile",
-                    "dest-filename": "Makefile"
+                    "path": "com.teeworlds.Teeworlds.desktop"
                 },
                 {
                     "type": "file",
-                    "path": "com.teeworlds.Teeworlds.desktop",
-                    "dest": "other/desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "com.teeworlds.Teeworlds.appdata.xml",
-                    "dest": "other/appdata"
+                    "path": "com.teeworlds.Teeworlds.appdata.xml"
                 }
             ]
         }
