@@ -20,5 +20,16 @@ SentUpstream: 2014-09-25
   <url type="homepage">http://www.teeworlds.com/</url>
   <screenshots>
     <screenshot type="default">https://www.teeworlds.com/images/screens/screenshot_jungle.png</screenshot>
+    <screenshot>https://www.teeworlds.com/images/screens/screenshot_desert.png</screenshot>
+    <screenshot>https://www.teeworlds.com/images/screens/screenshot_grass.png</screenshot>
+    <screenshot>https://www.teeworlds.com/images/screens/screenshot_winter.png</screenshot>
   </screenshots>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="0.6.4" date="2017-02-12"/>
+  </releases>
+  <developer_name>Teeworlds Team</developer_name>
 </application>
