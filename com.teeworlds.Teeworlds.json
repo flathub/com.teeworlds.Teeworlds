@@ -1,7 +1,7 @@
 {
     "app-id": "com.teeworlds.Teeworlds",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "1.6",
+    "runtime-version": "18.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
         "--device=dri",
@@ -23,7 +23,6 @@
     "modules": [
         "shared-modules/lua5.3/lua-5.3.2.json",
         "shared-modules/glu/glu-9.0.0.json",
-        "shared-modules/SDL/SDL-1.2.15.json",
         {
             "name": "bam",
             "no-autogen": true,
@@ -34,8 +33,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/matricks/bam/archive/v0.5.0.tar.gz",
-                    "sha256": "16c0bccb6c5dee62f4381acaa004dd4f7bc9a32c10d0f2a40d83ea7e2ae25998"
+                    "url": "https://github.com/matricks/bam/archive/v0.5.1.tar.gz",
+                    "sha256": "cc8596af3325ecb18ebd6ec2baee550e82cb7b2da19588f3f843b02e943a15a9"
                 },
                 {
                     "type": "patch",
@@ -60,10 +59,10 @@
             "name": "teeworlds",
             "buildsystem": "simple",
             "build-commands": [
-                "bam -a -v release",
-                "install -Dm755 teeworlds /app/bin/teeworlds",
-                "install -Dm755 teeworlds_srv /app/bin/teeworlds_srv",
-                "cp -a data /app/share/teeworlds",
+                "bam -a -v conf=release",
+                "install -Dm755 build/$FLATPAK_ARCH/release/teeworlds /app/bin/teeworlds",
+                "install -Dm755 build/$FLATPAK_ARCH/release/teeworlds_srv /app/bin/teeworlds_srv",
+                "cp -a build/$FLATPAK_ARCH/release/data /app/share/teeworlds",
                 "install -Dm644 com.teeworlds.Teeworlds.desktop /app/share/applications/com.teeworlds.Teeworlds.desktop",
                 "install -Dm644 com.teeworlds.Teeworlds.appdata.xml /app/share/appdata/com.teeworlds.Teeworlds.appdata.xml",
                 "mkdir -p icotmp",
@@ -73,12 +72,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/teeworlds/teeworlds/archive/0.6.4-release.tar.gz",
-                    "sha256": "831afdea9e343cd712382c74b941c6c14adfb9192d32504022b41c2abbb910d7"
-                },
-                {
-                    "type": "patch",
-                    "path": "teeworlds-bam-0.5.patch"
+                    "url": "https://github.com/teeworlds/teeworlds/archive/0.7.2.tar.gz",
+                    "sha256": "00847425ea8c5add663cafe83d9bb2a17bbc15dc5970ff9237b2046d1c8ed179"
                 },
                 {
                     "type": "patch",
