@@ -86,6 +86,13 @@
                 {
                     "type": "file",
                     "path": "com.teeworlds.Teeworlds.appdata.xml"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i '/_mm_pause/d' src/engine/client/client.cpp"
+                    ],
+                    "skip-arches": ["i386", "x86_64"]
                 }
             ]
         }
