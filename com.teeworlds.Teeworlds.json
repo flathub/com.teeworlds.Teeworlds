@@ -60,9 +60,9 @@
             "buildsystem": "simple",
             "build-commands": [
                 "bam -a -v conf=release",
-                "install -Dm755 build/$FLATPAK_ARCH/release/teeworlds /app/bin/teeworlds",
-                "install -Dm755 build/$FLATPAK_ARCH/release/teeworlds_srv /app/bin/teeworlds_srv",
-                "cp -a build/$FLATPAK_ARCH/release/data /app/share/teeworlds",
+                "install -Dm755 build/*/release/teeworlds /app/bin/teeworlds",
+                "install -Dm755 build/*/release/teeworlds_srv /app/bin/teeworlds_srv",
+                "cp -a build/*/release/data /app/share/teeworlds",
                 "install -Dm644 com.teeworlds.Teeworlds.desktop /app/share/applications/com.teeworlds.Teeworlds.desktop",
                 "install -Dm644 com.teeworlds.Teeworlds.appdata.xml /app/share/appdata/com.teeworlds.Teeworlds.appdata.xml",
                 "mkdir -p icotmp",
