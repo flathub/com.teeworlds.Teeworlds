@@ -58,8 +58,17 @@
         {
             "name": "teeworlds",
             "buildsystem": "simple",
+            "build-options": {
+                "arch": {
+                    "aarch64": {
+                        "env": {
+                            "BAM_ARGS": "arch=aarch64"
+                        }
+                    }
+                }
+            },
             "build-commands": [
-                "bam -a -v conf=release",
+                "bam -a -v conf=release $BAM_ARGS",
                 "install -Dm755 build/*/release/teeworlds /app/bin/teeworlds",
                 "install -Dm755 build/*/release/teeworlds_srv /app/bin/teeworlds_srv",
                 "cp -a build/*/release/data /app/share/teeworlds",
@@ -93,6 +102,10 @@
                         "sed -i '/_mm_pause/d' src/engine/client/client.cpp"
                     ],
                     "skip-arches": ["i386", "x86_64"]
+                },
+                {
+                    "type": "patch",
+                    "path": "aarch64.patch"
                 }
             ]
         }
