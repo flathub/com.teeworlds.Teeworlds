@@ -81,8 +81,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/teeworlds/teeworlds/archive/0.7.2.tar.gz",
-                    "sha256": "00847425ea8c5add663cafe83d9bb2a17bbc15dc5970ff9237b2046d1c8ed179"
+                    "url": "https://github.com/teeworlds/teeworlds/archive/0.7.3.1.tar.gz",
+                    "sha256": "62da301f20dfc20e2e480223dc1fc4ea5f9bfbfa6bc304c4c7732071a319ffd4"
                 },
                 {
                     "type": "patch",
@@ -95,13 +95,6 @@
                 {
                     "type": "file",
                     "path": "com.teeworlds.Teeworlds.appdata.xml"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i '/_mm_pause/d' src/engine/client/client.cpp"
-                    ],
-                    "skip-arches": ["i386", "x86_64"]
                 },
                 {
                     "type": "patch",
