@@ -4,7 +4,7 @@
     "runtime-version": "18.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
-        "--device=dri",
+        "--device=all",
         "--persist=.teeworlds",
         "--share=ipc",
         "--share=network",
