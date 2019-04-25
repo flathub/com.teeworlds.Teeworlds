@@ -75,14 +75,14 @@
                 "install -Dm644 com.teeworlds.Teeworlds.desktop /app/share/applications/com.teeworlds.Teeworlds.desktop",
                 "install -Dm644 com.teeworlds.Teeworlds.appdata.xml /app/share/appdata/com.teeworlds.Teeworlds.appdata.xml",
                 "mkdir -p icotmp",
-                "icotool -x -o icotmp other/icons/Teeworlds.ico",
-	        "for s in 16 24 32 48 128 256; do install -Dm644 icotmp/Teeworlds_*_${s}x${s}x32.png /app/share/icons/hicolor/${s}x${s}/apps/teeworlds.png; done"
+                "icotool -x -o icotmp other/icons/teeworlds.ico",
+	        "for s in 16 24 32 48 128 256; do install -Dm644 icotmp/teeworlds_*_${s}x${s}x32.png /app/share/icons/hicolor/${s}x${s}/apps/teeworlds.png; done"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/teeworlds/teeworlds/archive/0.7.2.tar.gz",
-                    "sha256": "00847425ea8c5add663cafe83d9bb2a17bbc15dc5970ff9237b2046d1c8ed179"
+                    "url": "https://github.com/teeworlds/teeworlds/releases/download/0.7.3.1/teeworlds-0.7.3.1-src.tar.gz",
+                    "sha256": "62a53f64f6cbf5165759ca0416c242b7c9d16d7d2775ea8fa82232c0036ba260"
                 },
                 {
                     "type": "patch",
@@ -95,13 +95,6 @@
                 {
                     "type": "file",
                     "path": "com.teeworlds.Teeworlds.appdata.xml"
-                },
-                {
-                    "type": "shell",
-                    "commands": [
-                        "sed -i '/_mm_pause/d' src/engine/client/client.cpp"
-                    ],
-                    "skip-arches": ["i386", "x86_64"]
                 },
                 {
                     "type": "patch",
