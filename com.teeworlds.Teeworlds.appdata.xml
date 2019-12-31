@@ -5,6 +5,7 @@ EmailAddress: contact@teeworlds.com
 SentUpstream: 2014-09-25
 -->
 <application>
+  <name>Teeworlds</name>
   <id type="desktop">com.teeworlds.Teeworlds.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Zlib and CC-BY-SA-3.0</project_license>
