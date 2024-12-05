@@ -4,9 +4,9 @@
 EmailAddress: contact@teeworlds.com
 SentUpstream: 2014-09-25
 -->
-<application>
+<component type="desktop-application">
   <name>Teeworlds</name>
-  <id type="desktop">com.teeworlds.Teeworlds.desktop</id>
+  <id>com.teeworlds.Teeworlds</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>Zlib and CC-BY-SA-3.0</project_license>
   <summary>Online multiplayer shooter game</summary>
@@ -18,12 +18,22 @@ SentUpstream: 2014-09-25
       It lets you desing custom maps.
     </p>
   </description>
-  <url type="homepage">http://www.teeworlds.com/</url>
+  <url type="homepage">https://www.teeworlds.com/</url>
+  <url type="bugtracker">https://github.com/teeworlds/teeworlds/issues</url>
+  <url type="vcs-browser">https://github.com/teeworlds/teeworlds</url>
   <screenshots>
-    <screenshot type="default">https://www.teeworlds.com/images/screens/screenshot_jungle.png</screenshot>
-    <screenshot>https://www.teeworlds.com/images/screens/screenshot_desert.png</screenshot>
-    <screenshot>https://www.teeworlds.com/images/screens/screenshot_grass.png</screenshot>
-    <screenshot>https://www.teeworlds.com/images/screens/screenshot_winter.png</screenshot>
+    <screenshot type="default">
+      <image>https://www.teeworlds.com/images/screens/screenshot_jungle.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.teeworlds.com/images/screens/screenshot_desert.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.teeworlds.com/images/screens/screenshot_grass.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://www.teeworlds.com/images/screens/screenshot_winter.png</image>
+    </screenshot>
   </screenshots>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">moderate</content_attribute>
@@ -37,4 +47,11 @@ SentUpstream: 2014-09-25
     <release version="0.6.4" date="2017-02-12"/>
   </releases>
   <developer_name>Teeworlds Team</developer_name>
-</application>
+  <provides>
+    <id>com.teeworlds.Teeworlds.desktop</id>
+  </provides>
+  <replaces>
+    <id>com.teeworlds.Teeworlds.desktop</id>
+  </replaces>
+  <launchable type="desktop-id">com.teeworlds.Teeworlds.desktop</launchable>
+</component>
