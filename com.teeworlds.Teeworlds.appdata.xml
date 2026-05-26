@@ -18,9 +18,17 @@ SentUpstream: 2014-09-25
       It lets you desing custom maps.
     </p>
   </description>
-  <url type="homepage">https://www.teeworlds.com/</url>
+  <url type="homepage">https://www.teeworlds.com</url>
   <url type="bugtracker">https://github.com/teeworlds/teeworlds/issues</url>
   <url type="vcs-browser">https://github.com/teeworlds/teeworlds</url>
+  <developer id="com.teeworlds">
+    <name>Teeworlds Team</name>
+  </developer>
+  <launchable type="desktop-id">com.teeworlds.Teeworlds.desktop</launchable>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
   <screenshots>
     <screenshot type="default">
       <image>https://www.teeworlds.com/images/screens/screenshot_jungle.png</image>
@@ -35,10 +43,6 @@ SentUpstream: 2014-09-25
       <image>https://www.teeworlds.com/images/screens/screenshot_winter.png</image>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.1">
-    <content_attribute id="violence-cartoon">moderate</content_attribute>
-    <content_attribute id="social-chat">intense</content_attribute>
-  </content_rating>
   <releases>
     <release version="0.7.5" date="2020-04-19"/>
     <release version="0.7.4" date="2019-12-23"/>
@@ -46,12 +50,10 @@ SentUpstream: 2014-09-25
     <release version="0.7.2" date="2018-12-24"/>
     <release version="0.6.4" date="2017-02-12"/>
   </releases>
-  <developer_name>Teeworlds Team</developer_name>
   <provides>
     <id>com.teeworlds.Teeworlds.desktop</id>
   </provides>
   <replaces>
     <id>com.teeworlds.Teeworlds.desktop</id>
   </replaces>
-  <launchable type="desktop-id">com.teeworlds.Teeworlds.desktop</launchable>
 </component>

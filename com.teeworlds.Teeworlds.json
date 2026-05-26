@@ -1,8 +1,10 @@
 {
     "app-id": "com.teeworlds.Teeworlds",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "24.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
+    "command": "teeworlds",
+    "rename-icon": "teeworlds",
     "finish-args": [
         "--device=all",
         "--persist=.teeworlds",
@@ -11,15 +13,6 @@
         "--socket=x11",
         "--socket=pulseaudio"
      ],
-    "command": "teeworlds",
-    "rename-icon": "teeworlds",
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/aclocal",
-        "/share/man",
-        "*.la", "*.a"
-    ],
     "modules": [
         "shared-modules/lua5.3/lua-5.3.5.json",
         "shared-modules/glu/glu-9.json",
@@ -38,20 +31,7 @@
                 },
                 {
                     "type": "patch",
-                    "path": "bam-destdir.patch"
-                }
-            ]
-        },
-        {
-            "name": "icoutils",
-            "cleanup": [
-                "*"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://savannah.nongnu.org/download/icoutils/icoutils-0.31.1.tar.bz2",
-                    "sha256": "26e29d3c78f25d4cdf402501ac0414c51a9a092daebf6c9dee3b837dee693093"
+                    "path": "patches/bam-destdir.patch"
                 }
             ]
         },
@@ -72,11 +52,9 @@
                 "install -Dm755 build/*/release/teeworlds /app/bin/teeworlds",
                 "install -Dm755 build/*/release/teeworlds_srv /app/bin/teeworlds_srv",
                 "cp -a build/*/release/data /app/share/teeworlds",
-                "install -Dm644 com.teeworlds.Teeworlds.desktop /app/share/applications/com.teeworlds.Teeworlds.desktop",
-                "install -Dm644 com.teeworlds.Teeworlds.appdata.xml /app/share/appdata/com.teeworlds.Teeworlds.appdata.xml",
-                "mkdir -p icotmp",
-                "icotool -x -o icotmp other/icons/teeworlds.ico",
-	        "for s in 16 24 32 48 128 256; do install -Dm644 icotmp/teeworlds_*_${s}x${s}x32.png /app/share/icons/hicolor/${s}x${s}/apps/teeworlds.png; done"
+                "install -Dm644 com.teeworlds.Teeworlds.desktop -t /app/share/applications/",
+                "install -Dm644 com.teeworlds.Teeworlds.appdata.xml -t /app/share/metainfo/",
+                "install -Dm644 teeworlds.png -t /app/share/icons/hicolor/256x256/apps/"
             ],
             "sources": [
                 {
@@ -86,7 +64,11 @@
                 },
                 {
                     "type": "patch",
-                    "path": "teeworlds-set-data-dir.patch"
+                    "path": "patches/teeworlds-set-data-dir.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/aarch64.patch"
                 },
                 {
                     "type": "file",
@@ -97,8 +79,8 @@
                     "path": "com.teeworlds.Teeworlds.appdata.xml"
                 },
                 {
-                    "type": "patch",
-                    "path": "aarch64.patch"
+                    "type": "file",
+                    "path": "teeworlds.png"
                 }
             ]
         }
